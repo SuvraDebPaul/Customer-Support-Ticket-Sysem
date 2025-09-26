@@ -2,8 +2,9 @@ import React, { use, useState } from "react";
 import { toast } from "react-toastify";
 import Banner from "./Banner";
 import Tickets from "./Tickets";
+import NewTicket from "./NewTicket";
 
-const Main = ({ ticketPromise }) => {
+const Main = ({ ticketPromise, newTicket, onNewTicket }) => {
   const allTicketsInfo = use(ticketPromise);
   const [allTickets, setAllTickets] = useState(allTicketsInfo);
   const [allTask, setAllTask] = useState([]);
@@ -44,6 +45,27 @@ const Main = ({ ticketPromise }) => {
 
   return (
     <main>
+      {newTicket ? (
+        <NewTicket onNewTicket={onNewTicket} />
+      ) : (
+        <>
+          <Banner
+            progressCounter={progressCounter}
+            resolveTaskCounter={resolveTaskCounter}
+          />
+          <Tickets
+            allTickets={allTickets}
+            onClickedCard={handelClickedCard}
+            allTask={allTask}
+            setAllTask={setAllTask}
+            onResoveClick={handelResoveClick}
+            resolveTask={resolveTask}
+            onResolveTaskRemove={onResolveTaskRemove}
+          />
+        </>
+      )}
+
+      {/* {newTicket && <NewTicket />}
       <Banner
         progressCounter={progressCounter}
         resolveTaskCounter={resolveTaskCounter}
@@ -56,7 +78,7 @@ const Main = ({ ticketPromise }) => {
         onResoveClick={handelResoveClick}
         resolveTask={resolveTask}
         onResolveTaskRemove={onResolveTaskRemove}
-      />
+      /> */}
     </main>
   );
 };

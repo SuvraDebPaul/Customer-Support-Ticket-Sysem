@@ -1,4 +1,4 @@
-const Navbar = () => {
+const Navbar = ({ clickNewTicket }) => {
   return (
     <header className="bg-base-100 shadow-sm">
       <div className="navbar w-11/12 mx-auto">
@@ -66,12 +66,12 @@ const Navbar = () => {
             <li>
               <a>Contact</a>
             </li>
-            <li className="ml-2">
+            <li onClick={clickNewTicket} className="ml-2">
               <a className="btn purple-gradient text-white">+ New Ticket</a>
             </li>
           </ul>
         </div>
-        <div className="navbar-end lg:hidden ">
+        <div onClick={clickNewTicket} className="navbar-end lg:hidden ">
           <a className="btn purple-gradient text-white">+ New Ticket</a>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import Navbar from "./components/Header/Navbar";
 import Main from "./components/Main/Main";
@@ -6,10 +6,13 @@ import Footer from "./components/Footer/Footer";
 
 const App = () => {
   const ticketPromise = fetch("/data.json").then((res) => res.json());
-
+  const [newTicket, setNewTicket] = useState(false);
+  const handelNewTicket = () => {
+    setNewTicket(!newTicket);
+  };
   return (
     <>
-      <Navbar />
+      <Navbar clickNewTicket={handelNewTicket} />
       <Suspense
         fallback={
           <div className="w-11/12 mx-auto text-center">
@@ -17,7 +20,11 @@ const App = () => {
           </div>
         }
       >
-        <Main ticketPromise={ticketPromise} />
+        <Main
+          ticketPromise={ticketPromise}
+          newTicket={newTicket}
+          onNewTicket={handelNewTicket}
+        />
       </Suspense>
       <Footer />
       <ToastContainer />
