@@ -40,13 +40,22 @@ const Main = ({ ticketPromise, newTicket, onNewTicket }) => {
     toast.error("Resolved Task Has Been Removed Sucessfully");
   };
 
+  const handelNewTicket = (newTicket) => {
+    console.log(newTicket);
+    setAllTickets([...allTickets, newTicket]);
+  };
+
   let progressCounter = allTask.length;
   let resolveTaskCounter = resolveTask.length;
 
   return (
     <main>
       {newTicket ? (
-        <NewTicket onNewTicket={onNewTicket} />
+        <NewTicket
+          onNewTicket={onNewTicket}
+          handelNewTicket={handelNewTicket}
+          allTickets={allTickets}
+        />
       ) : (
         <>
           <Banner

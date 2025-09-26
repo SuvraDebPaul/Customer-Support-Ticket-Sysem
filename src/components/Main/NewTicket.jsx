@@ -1,9 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 
-const NewTicket = ({ onNewTicket }) => {
+const NewTicket = ({ onNewTicket, handelNewTicket, allTickets }) => {
+  const [ticketName, setTicketName] = useState("");
+  const [priority, setPriority] = useState("Low");
+  const [userName, setUserName] = useState("");
+  const [description, setDescription] = useState("");
+
+  const handelFormSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form Submission");
+    if (!ticketName && !priority && !userName && !description) {
+      alert("Please Fill Up All the Required Fields");
+      return;
+    }
+    const lastId =
+      allTickets.length > 0 ? allTickets[allTickets.length - 1].id : 1000;
+    const createdAt = new Date();
+    const newTicket = {
+      id: lastId + 1,
+      title: ticketName,
+      description: description,
+      customer: userName,
+      priority: priority,
+      status: "Open",
+      createdAt: createdAt.toISOString(),
+    };
+    handelNewTicket(newTicket);
+    setTicketName("");
+    setPriority("Low");
+    setUserName("");
+    setDescription("");
+  };
+
   return (
-    <div className="w-11/12 mx-auto bg-white mt-10 p-4 rounded-md">
-      <form action="">
+    <div className="w-11/12 mx-auto bg-white mt-5 p-4 rounded-md">
+      <h3 className="text-2xl font-bold text-center mb-8">
+        Please Write Below Your Problem Details
+      </h3>
+      <form className="my-10" action="" onSubmit={handelFormSubmit}>
         <div className="flex gap-4">
           <div className="w-1/2">
             <fieldset className="fieldset">
@@ -14,15 +48,25 @@ const NewTicket = ({ onNewTicket }) => {
                 type="text"
                 className="input w-full"
                 placeholder="Please write Ticket title"
+                value={ticketName}
+                onChange={(e) => {
+                  setTicketName(e.target.value);
+                }}
               />
             </fieldset>
             <fieldset className="fieldset">
               <legend className="fieldset-legend">Priority</legend>
-              <select defaultValue="Pick a browser" className="select w-full">
+              <select
+                value={priority}
+                className="select w-full"
+                onChange={(e) => {
+                  setPriority(e.target.value);
+                }}
+              >
                 <option disabled={true}>Low</option>
-                <option>Low</option>
-                <option>Medium</option>
-                <option>High</option>
+                <option value={"Low"}>Low</option>
+                <option value={"Medium"}>Medium</option>
+                <option value={"High"}>High</option>
               </select>
             </fieldset>
             <fieldset className="fieldset">
@@ -53,6 +97,10 @@ const NewTicket = ({ onNewTicket }) => {
                   maxLength="30"
                   title="Only letters, numbers or dash"
                   className="w-full"
+                  value={userName}
+                  onChange={(e) => {
+                    setUserName(e.target.value);
+                  }}
                 />
               </label>
               <p className="validator-hint">
@@ -68,10 +116,17 @@ const NewTicket = ({ onNewTicket }) => {
               <textarea
                 className="textarea h-50 w-full"
                 placeholder="Description"
+                value={description}
+                onChange={(e) => {
+                  setDescription(e.target.value);
+                }}
               ></textarea>
             </fieldset>
           </div>
         </div>
+        <button className="btn btn-block btn-primary text-white uppercase text-xl">
+          Submit
+        </button>
       </form>
       <button
         onClick={onNewTicket}
