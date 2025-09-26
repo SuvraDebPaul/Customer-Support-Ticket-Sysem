@@ -5,7 +5,9 @@ import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
 
 const App = () => {
-  const ticketPromise = fetch("/data.json").then((res) => res.json());
+  const ticketPromise = fetch(import.meta.env.BASE_URL + "data.json").then(
+    (res) => res.json()
+  );
   const [newTicket, setNewTicket] = useState(false);
   const handelNewTicket = () => {
     setNewTicket(!newTicket);
