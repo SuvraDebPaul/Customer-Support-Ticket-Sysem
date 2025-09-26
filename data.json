@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1001,
+    "title": "Login page not loading",
+    "description": "React login form hangs after credentials are entered.",
+    "customer": "CandyFloss",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2025-09-20T10:15:00Z"
+  },
+  {
+    "id": 1002,
+    "title": "API response delay",
+    "description": "JavaScript fetch call takes too long to return results.",
+    "customer": "SugarCube",
+    "priority": "Medium",
+    "status": "In-Progress",
+    "createdAt": "2025-09-19T14:25:00Z"
+  },
+  {
+    "id": 1003,
+    "title": "Broken navigation links",
+    "description": "React Router links fail to redirect to target pages.",
+    "customer": "HoneyDrop",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "2025-09-18T09:10:00Z"
+  },
+  {
+    "id": 1004,
+    "title": "CORS issue on API calls",
+    "description": "CORS error when making API requests from frontend.",
+    "customer": "SweetBerry",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2025-09-17T12:00:00Z"
+  },
+  {
+    "id": 1005,
+    "title": "Styling not applied",
+    "description": "TailwindCSS classes not reflecting after production build.",
+    "customer": "CupcakeQueen",
+    "priority": "Medium",
+    "status": "In-Progress",
+    "createdAt": "2025-09-16T08:45:00Z"
+  },
+  {
+    "id": 1006,
+    "title": "Form submission error",
+    "description": "React form validation passes but API does not receive data.",
+    "customer": "ChocoChip",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2025-09-15T11:20:00Z"
+  },
+  {
+    "id": 1007,
+    "title": "Component state not updating",
+    "description": "UI does not refresh after state change until reload.",
+    "customer": "Marshmallow",
+    "priority": "Medium",
+    "status": "In-Progress",
+    "createdAt": "2025-09-14T15:40:00Z"
+  },
+  {
+    "id": 1008,
+    "title": "Image upload not working",
+    "description": "Profile picture upload fails due to validation issue.",
+    "customer": "Lollipop",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "2025-09-14T09:55:00Z"
+  },
+  {
+    "id": 1009,
+    "title": "Dark mode toggle issue",
+    "description": "Theme toggle button not switching correctly.",
+    "customer": "Caramel",
+    "priority": "Low",
+    "status": "In-Progress",
+    "createdAt": "2025-09-13T13:05:00Z"
+  },
+  {
+    "id": 1010,
+    "title": "Session timeout not working",
+    "description": "User sessions remain active beyond expiry time.",
+    "customer": "CookieMonster",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2025-09-12T07:30:00Z"
+  },
+  {
+    "id": 1011,
+    "title": "Notifications not appearing",
+    "description": "WebSocket events not showing notifications in UI.",
+    "customer": "DonutLover",
+    "priority": "Medium",
+    "status": "In-Progress",
+    "createdAt": "2025-09-11T16:50:00Z"
+  },
+  {
+    "id": 1012,
+    "title": "Search bar not functional",
+    "description": "Search does not filter data properly.",
+    "customer": "CandyCane",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "2025-09-10T10:00:00Z"
+  },
+  {
+    "id": 1013,
+    "title": "Payment gateway error",
+    "description": "Checkout process fails during API transaction.",
+    "customer": "BrownieBite",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2025-09-09T18:20:00Z"
+  },
+  {
+    "id": 1014,
+    "title": "Charts not rendering",
+    "description": "Recharts components fail to load on dashboard.",
+    "customer": "SugarPlum",
+    "priority": "Medium",
+    "status": "In-Progress",
+    "createdAt": "2025-09-08T14:35:00Z"
+  }
+]
